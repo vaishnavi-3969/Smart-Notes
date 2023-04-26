@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content%}
+    <form  method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+    {% if form.errors %}
+        <div class="alert alert-danger my-5">
+            {{form.errors.title.as_text}}
+        </div>
+    {% endif %}
+    <a href="{% url 'notes.list' %}" class="btn btn-secondary my-5"><i class="fa-solid fa-xmark"></i>Cancel</a>
+    
+    <br/>
+    <a href="{% url 'notes.list' %}" class="btn btn-tertiary"><i class="fa-solid fa-backward"></i> Back to notes</a>
+
+{% endblock %}

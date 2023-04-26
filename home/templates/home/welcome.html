@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="my-5 text-center container">
+    <h1>Welcome to Smart Notes!</h1>
+    <p>Today is {{today}}</p>
+    <a href="{% url 'notes.list' %}" class="btn btn-success">Check out these smart notes</a>
+    </div>
+{% endblock %}
